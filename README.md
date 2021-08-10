@@ -1,7 +1,9 @@
 # point-in-polygon
 基于射线法快速实现判别点在面内,在批量点和复杂面的情况下优化非常明显，通常有近20倍的性能提升。支持判别点在Polygon，点在MultiPolygon内的批量判断计算。
 ## 原理说明
-默认射线法是通过比较点和segment的交点数量来确定点是否在面内，假设面有m个顶点(m-1个segment），有n个需要判别的点，则计算量为（m-1)*n。
+默认射线法是通过比较点和segment的交点数量来确定点是否在面内，假设面有m个顶点(m-1个segment），有n个需要判别的点，则计算量为（m-1)*n，当m特别大时，面异常复杂，计算量会非常大：
+![复杂面](https://github.com/FreeGIS/point-within-polygon/blob/master/doc/polygon.png)
+
 本方案通过对面的segment建立rtree索引，从而避免逐线段比较，通过索引快速过滤出若干segment，导致计算量大大减少。
 
 
