@@ -19,7 +19,6 @@ for (let i = 0; i < 10000; i++) {
     })
 }
 
-//isPointInPolygonWithIndexs, isPointInPolygonWithOutIndexs
 console.time('基于索引查询');
 const result1 = point_in_polygon.isPointInPolygonWithIndexs(pts, pgFeature);
 console.timeEnd('基于索引查询');
