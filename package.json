@@ -1,0 +1,30 @@
+{
+  "name": "point-in-polygon",
+  "version": "1.0.0",
+  "description": "基于射线法实现快速判定点是否在面内",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreeGIS/point-in-polygon.git"
+  },
+  "keywords": [
+    "point-in-polygon,ray,gis"
+  ],
+  "author": "freegis",
+  "license": "BSD 3-Clause License",
+  "bugs": {
+    "url": "https://github.com/FreeGIS/point-in-polygon/issues"
+  },
+  "homepage": "https://github.com/FreeGIS/point-in-polygon#readme",
+  "dependencies": {
+    "rbush": "^3.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "rollup": "^2.56.1"
+  }
+}
