@@ -1,7 +1,6 @@
 const point_within_polygon = require('../dist/point-within-polygon-cjs');
 const pgFeature = require('./test.json');
 
-
 //区间内随机生成1万个点
 let pts = [];
 for (let i = 0; i < 10000; i++) {
