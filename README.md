@@ -5,6 +5,7 @@
 ![复杂面](https://github.com/FreeGIS/point-within-polygon/blob/master/doc/polygon.png)
 
 本方案通过对面的segment建立rtree索引，从而避免逐线段比较，通过索引快速过滤出若干segment，导致计算量大大减少:
+
 ![segement建立rtree索引](https://github.com/FreeGIS/point-within-polygon/blob/master/doc/segement-rtree.png)
 
 
