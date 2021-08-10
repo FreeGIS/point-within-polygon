@@ -17,7 +17,7 @@ export function isPointInRingWithIndexs(point, segmentSpatialIndex) {
   for (let segment of searchs) {
     // 点如果在ring边界上，证明点不在ring内部
     if (segmentContains(segment.start, segment.end, point)) {
-      return 0;
+      return -1;
     }
     // 边平行 特殊情况跳过
     if (segment.start[ 1 ] === segment.end[ 1 ])
