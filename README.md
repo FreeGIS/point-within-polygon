@@ -4,7 +4,8 @@
 默认射线法是通过比较点和segment的交点数量来确定点是否在面内，假设面有m个顶点(m-1个segment），有n个需要判别的点，则计算量为（m-1)*n，当m特别大时，面异常复杂，可能还会存在大量的孔洞，此时计算量会非常大，性能很低，如下图：
 ![复杂面](https://github.com/FreeGIS/point-within-polygon/blob/master/doc/polygon.png)
 
-本方案通过对面的segment建立rtree索引，从而避免逐线段比较，通过索引快速过滤出若干segment，导致计算量大大减少。
+本方案通过对面的segment建立rtree索引，从而避免逐线段比较，通过索引快速过滤出若干segment，导致计算量大大减少:
+![segement建立rtree索引](https://github.com/FreeGIS/point-within-polygon/blob/master/doc/segement-rtree.png)
 
 
 ## 安装
