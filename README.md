@@ -1,4 +1,4 @@
-# point-in-polygon
+# point-within-polygon
 基于射线法快速实现判别点在面内,在批量点和复杂面的情况下优化非常明显，通常有近20倍的性能提升。支持判别点在Polygon，点在MultiPolygon内的批量判断计算。
 ## 原理说明
 默认射线法是通过比较点和segment的交点数量来确定点是否在面内，假设面有m个顶点(m-1个segment），有n个需要判别的点，则计算量为（m-1)*n，当m特别大时，面异常复杂，可能还会存在大量的孔洞，此时计算量会非常大，性能很低，如下图：
@@ -18,7 +18,9 @@ npm install point-within-polygon --save
 支持在nodejs中使用，同时支持以es6形式在前端使用。
 point_within_polygon支持两种点在面内查询方式：
 带segment rtree索引的查询方式：isPointInPolygonWithIndexs
+
 一种是原始的射线法逐一判断方式：isPointInPolygonWithOutIndexs
+
 两种查询方法参数一样，输入点是geojson的点features数组和geojson的Polygon、MultiPolygon的feature。
 使用参考如下示例：
 ```

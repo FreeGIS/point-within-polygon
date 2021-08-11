@@ -1,11 +1,11 @@
 {
   "name": "point-within-polygon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于射线法实现快速判定点是否在面内",
   "main": "index.js",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "test": "node test/test.js"
+    "test": "node test/app.js"
   },
   "repository": {
     "type": "git",
