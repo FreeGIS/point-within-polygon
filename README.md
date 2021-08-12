@@ -16,10 +16,13 @@ npm install point-within-polygon --save
 
 ## 使用
 支持在nodejs中使用，同时支持以es6形式在前端使用。
+
 point_within_polygon(ptFeatures,pgFeature,withIndexs=1)
 
 ptFeatures:GeoJSON的feature数组。
+
 pgFeature:GeoJSON的Polygon或MultiPolygon面数据。
+
 withIndexs:是否使用索引查询，默认1是基于Segment的rtree索引查询。
 
 使用参考如下示例：
