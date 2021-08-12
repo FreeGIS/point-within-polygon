@@ -1,5 +1,13 @@
 import RBush from 'rbush';
 import { isPointInRingWithIndexs, isPointInRingWithoutIndexs } from './point-in-ring';
+
+function index(ptFeatures, pgFeature,withIndexes=1){
+    if(withIndexes)
+        return isPointInPolygonWithIndexs(ptFeatures, pgFeature);
+    else 
+        return isPointInPolygonWithOutIndexs(ptFeatures, pgFeature);
+}
+
 // 批量判断点在面内，带索引
 function isPointInPolygonWithIndexs(ptFeatures, pgFeature) {
     // 判别pgFeature的类型
@@ -169,6 +177,4 @@ function getRingIndex(ring) {
     return { ringIndex, segmentIndex };
 }
 
-export {
-    isPointInPolygonWithIndexs, isPointInPolygonWithOutIndexs
-};
+export default index;

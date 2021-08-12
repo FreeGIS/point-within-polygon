@@ -16,15 +16,15 @@ npm install point-within-polygon --save
 
 ## 使用
 支持在nodejs中使用，同时支持以es6形式在前端使用。
-point_within_polygon支持两种点在面内查询方式：
-带segment rtree索引的查询方式：isPointInPolygonWithIndexs
+point_within_polygon(ptFeatures,pgFeature,withIndexs=1)
 
-一种是原始的射线法逐一判断方式：isPointInPolygonWithOutIndexs
+ptFeatures:GeoJSON的feature数组。
+pgFeature:GeoJSON的Polygon或MultiPolygon面数据。
+withIndexs:是否使用索引查询，默认1是基于Segment的rtree索引查询。
 
-两种查询方法参数一样，输入点是geojson的点features数组和geojson的Polygon、MultiPolygon的feature。
 使用参考如下示例：
 ```
-const point_within_polygon = require('../dist/point-within-polygon-cjs');
+const point_within_polygon = require('point-within-polygon');
 const pgFeature = require('./test.json');
 
 //区间内随机生成1万个点
@@ -45,13 +45,13 @@ for (let i = 0; i < 10000; i++) {
 }
 
 console.time('基于索引查询');
-const result1 = point_within_polygon.isPointInPolygonWithIndexs(pts, pgFeature);
+const result1 = point_within_polygon(pts, pgFeature,1);
 console.timeEnd('基于索引查询');
 console.log('选择的要素数量:'+result1.length);
 
 
 console.time('不基于索引查询');
-const result2 = point_within_polygon.isPointInPolygonWithOutIndexs(pts, pgFeature);
+const result2 = point_within_polygon(pts, pgFeature,0);
 console.timeEnd('不基于索引查询');
 console.log('选择的要素数量:'+result2.length);
 ```

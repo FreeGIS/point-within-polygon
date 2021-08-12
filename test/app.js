@@ -19,12 +19,12 @@ for (let i = 0; i < 10000; i++) {
 }
 
 console.time('基于索引查询');
-const result1 = point_within_polygon.isPointInPolygonWithIndexs(pts, pgFeature);
+const result1 = point_within_polygon(pts, pgFeature,1);
 console.timeEnd('基于索引查询');
 console.log('选择的要素数量:'+result1.length);
 
 
 console.time('不基于索引查询');
-const result2 = point_within_polygon.isPointInPolygonWithOutIndexs(pts, pgFeature);
+const result2 = point_within_polygon(pts, pgFeature,0);
 console.timeEnd('不基于索引查询');
 console.log('选择的要素数量:'+result2.length);
