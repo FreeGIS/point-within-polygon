@@ -36,5 +36,5 @@ const result3 = pointsWithinPolygon({
     "type": "FeatureCollection",
     "features": pts
 }, pgFeature);
-console.log('选择的要素数量:' + result3.features.length);
 console.timeEnd('turf查询');
+console.log('选择的要素数量:' + result3.features.length);
