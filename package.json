@@ -1,14 +1,14 @@
 {
   "name": "point-within-polygon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于射线法实现快速判定点是否在面内",
   "module": "src/index.js",
   "main": "src/index.js",
   "jsdelivr": "dist/point-within-polygon.js",
   "unpkg": "dist/point-within-polygon.js",
   "exports": {
-    "umd": "./dist/point-within-polygon-cjs.js",
-    "default": "./src/index.js"
+    "require": "./dist/point-within-polygon-cjs.js",
+    "import": "./dist/point-within-polygon-es.js"
   },
   "files": [
     "src",
