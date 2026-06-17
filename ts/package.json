@@ -1,0 +1,56 @@
+{
+  "name": "point-within-polygon",
+  "version": "1.0.8",
+  "description": "基于射线法实现快速判定点是否在面内",
+  "type": "commonjs",
+  "main": "./dist/point-within-polygon.cjs",
+  "module": "./dist/point-within-polygon.mjs",
+  "types": "./dist/types/index.d.ts",
+  "jsdelivr": "dist/point-within-polygon.js",
+  "unpkg": "dist/point-within-polygon.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/point-within-polygon.cjs",
+      "import": "./dist/point-within-polygon.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run clean && rollup -c rollup.config.mjs && tsc -p tsconfig.types.json",
+    "test": "node test/app.js",
+    "test:perf": "node test/perf.js",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreeGIS/point-within-polygon.git"
+  },
+  "keywords": [
+    "point-in-polygon,ray,gis"
+  ],
+  "author": "freegis",
+  "license": "BSD 3-Clause License",
+  "bugs": {
+    "url": "https://github.com/FreeGIS/point-within-polygon/issues"
+  },
+  "homepage": "https://github.com/FreeGIS/point-within-polygon#readme",
+  "dependencies": {
+    "rbush": "^3.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@turf/points-within-polygon": "^6.5.0",
+    "eslint": "^7.32.0",
+    "rollup": "^2.56.1",
+    "rimraf": "^5.0.10",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
+}

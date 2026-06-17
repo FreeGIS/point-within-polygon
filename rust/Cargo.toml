@@ -1,0 +1,10 @@
+[package]
+name = "point-within-polygon-rs"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+license = "BSD-3-Clause"
+description = "Batch point-in-Polygon/MultiPolygon query with geo-index spatial indexes"
+
+[dependencies]
+geo-index = "0.3.4"
